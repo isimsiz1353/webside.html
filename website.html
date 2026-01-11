@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadime Aydemir El Sanatları | El Yapımı Ürünler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* GENEL STİLLER - 500 satır */
+        :root {
+            --primary: #8B4513;
+            --primary-light: #A0522D;
+            --secondary: #D2691E;
+            --accent: #F4A460;
+            --light: #FAEBD7;
+            --dark: #3C2F2F;
+            --gray: #8C8C8C;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* HEADER - 200 satır */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .contact-info span {
+            margin-right: 20px;
+        }
+        
+        .contact-info i {
+            margin-right: 5px;
+        }
+        
+        .social-icons a {
+            margin-left: 15px;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent);
+        }
+        
+        .main-header {
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .search-bar {
+            flex-grow: 1;
+            max-width: 500px;
+            margin: 0 30px;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        
+        .search-bar input:focus {
+            border-color: var(--primary);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-action {
+            margin-left: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .user-action i {
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav {
+            background-color: var(--light-gray);
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 15px 20px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 100;
+        }
+        
+        .nav-links li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu a {
+            padding: 12px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* HERO BÖLÜMÜ - 150 satır */
+        .hero {
+            background: linear-gradient(rgba(60, 47, 47, 0.7), rgba(60, 47, 47, 0.7)), url('https://images.unsplash.com/photo-1560749003-f4b1e11e4d72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .hero-buttons .btn {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .hero-buttons .btn:hover {
+            background-color: var(--white);
+        }
+        
+        /* SATICI PROFİLİ - 300 satır */
+        .seller-profile {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .seller-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .seller-image {
+            flex: 0 0 300px;
+        }
+        
+        .seller-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .seller-info {
+            flex: 1;
+        }
+        
+        .seller-name {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .seller-title {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .seller-description {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .seller-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* ÜRÜNLER BÖLÜMÜ - 400 satır */
+        .products {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .product-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(139, 69, 19, 0.15);
+        }
+        
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            height: 60px;
+            overflow: hidden;
+        }
+        
+        .product-rating {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+        
+        .add-to-cart {
+            background-color: var(--accent);
+            color: var(--dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .view-all {
+            text-align: center;
+        }
+        
+        /* ÜRÜN EKLEME FORMU - 300 satır */
+        .add-product {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .file-upload {
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary);
+        }
+        
+        .file-upload i {
+            font-size: 3rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        /* NASIL ÇALIŞIR - 200 satır */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* FOOTER - 200 satır */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 70px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding-right: 30px;
+        }
+        
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links li {
+            list-style: none;
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .contact-info-footer li {
+            list-style: none;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info-footer i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 5px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVE TASARIM - 350 satır */
+        @media (max-width: 992px) {
+            .seller-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .seller-image {
+                flex: 0 0 auto;
+                margin-bottom: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 20px 0 0;
+                max-width: 100%;
+            }
+            
+            .top-bar-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .contact-info span {
+                margin-right: 10px;
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .seller-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .product-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 10px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* EK STİLLER - 200 satır */
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .product-card {
+            position: relative;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            list-style: none;
+        }
+        
+        .page-item {
+            margin: 0 5px;
+        }
+        
+        .page-link {
+            display: block;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+        
+        .page-item.active .page-link,
+        .page-link:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .required:after {
+            content: ' *';
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- ÜST BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> 0533 123 45 67</span>
+                <span><i class="fas fa-envelope"></i> info@fadimeaydemir.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANA HEADER -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-hands"></i></div>
+                    <h1>Fadime <span>Aydemir</span></h1>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="El yapımı ürünlerde ara...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="user-action" id="loginBtn">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-action" id="wishlistBtn">
+                        <i class="fas fa-heart"></i>
+                        <span class="cart-count">3</span>
+                    </div>
+                    <div class="user-action" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#home">Anasayfa</a></li>
+                    <li><a href="#products">Ürünler</a></li>
+                    <li><a href="#seller">Satıcı</a></li>
+                    <li><a href="#add-product">Ürün Ekle</a></li>
+                    <li><a href="#how-it-works">Nasıl Çalışır?</a></li>
+                    <li><a href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO BÖLÜMÜ -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>El Emeği Göz Nuru Ürünler</h1>
+            <p>Fadime Aydemir'in 20 yıllık el sanatları tecrübesiyle hazırladığı özel tasarım ürünleri keşfedin. Her biri özenle ve sevgiyle üretilmiş eşsiz parçalar.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Alışverişe Başla</a>
+                <a href="#seller" class="btn btn-secondary">Satıcıyı Tanı</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SATICI PROFİLİ -->
+    <section class="seller-profile" id="seller">
+        <div class="container">
+            <div class="section-header">
+                <h2>Satıcımız: Fadime Aydemir</h2>
+                <p>20 yıldır el sanatları ile uğraşan Fadime Aydemir'in hikayesi ve tutkusu</p>
+            </div>
+            
+            <div class="seller-container">
+                <div class="seller-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=658&q=80" alt="Fadime Aydemir">
+                </div>
+                <div class="seller-info">
+                    <h2 class="seller-name">Fadime Aydemir</h2>
+                    <span class="seller-title">El Sanatları Ustası & Girişimci</span>
+                    
+                    <p class="seller-description">
+                        Merhaba, ben Fadime Aydemir. 20 yılı aşkın süredir el sanatları ile uğraşıyorum. Bu süreçte nakış, dantel, örgü, ahşap boyama ve daha birçok el işi tekniğinde kendimi geliştirdim. Amacım, unutulmaya yüz tutmuş el sanatlarını günümüzde yaşatmak ve siz değerli müşterilerimle buluşturmak.
+                    </p>
+                    
+                    <p class="seller-description">
+                        Her bir ürünümü özenle, titizlikle ve sevgiyle hazırlıyorum. Kullandığım malzemelerin kalitesine önem veriyor, doğal ve sağlıklı ürünler tercih ediyorum. Sipariş üzerine özel tasarımlar da yapıyorum. Hayalinizdeki ürünü birlikte tasarlayalım!
+                    </p>
+                    
+                    <div class="seller-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">20+</div>
+                            <div class="stat-label">Yıllık Tecrübe</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">500+</div>
+                            <div class="stat-label">Mutlu Müşteri</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1000+</div>
+                            <div class="stat-label">Üretilen Ürün</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">4.9</div>
+                            <div class="stat-label">Müşteri Puanı</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜRÜNLER BÖLÜMÜ -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>El Yapımı Ürünler</h2>
+                <p>Fadime Aydemir'in el emeğiyle ürettiği özel tasarım ürünleri keşfedin</p>
+            </div>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="nakis">Nakış Ürünleri</button>
+                <button class="filter-btn" data-filter="orgu">Örgü Ürünler</button>
+                <button class="filter-btn" data-filter="dantel">Dantel Ürünler</button>
+                <button class="filter-btn" data-filter="ahsap">Ahşap Ürünler</button>
+                <button class="filter-btn" data-filter="hediye">Özel Hediye</button>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Ürün 1 -->
+                <div class="product-card" data-category="nakis">
+                    <div class="badge">Özel</div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1618354691792-d1d42acfd860?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80" alt="El işi nakışlı yastık">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Nakış Ürünleri</div>
+                        <h3 class="product-title">El İşi Nakışlı Yastık Kılıfı</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24)</span>
+                        </div>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">₺189,90</span>
+                                <span class="old-price">₺249,90</span>
+                            </div>
+                            <div class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ürün 2 -->
+                <div class="product-card" data-category="orgu">
+                    <div class="badge">Yeni</div>
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1575939238479-5c659567bb7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Örgü battaniye">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Örgü Ürünler</div>
+                        <h3 class="product-title">El Örgüsü Bebek Battaniyesi</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                        <div class="product-price">
+                            <div>
+                                <span class="price">₺329,90</span>
+                            </div>
+                            <div class="add-to-cart">
+                                <i class="fas fa-cart-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ürün 3 -->
+                <div class="product-card" data-category="dantel">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1333&q=80" alt="Dantel masa örtüsü">
+                    </div>
+                    <div class="product-info">
+                        <div class="product
